@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Hipoteca Inversa</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="result">
+            <h2>Resultados de la Hipoteca Inversa</h2>
+            <p><span class="highlight">Valor de la propiedad:</span> <span class="value">${{ reverse_mortgage.property_value }}</span></p>
+            <p><span class="highlight">Tasa de interés:</span> <span class="value">{{ reverse_mortgage.interest }}%</span></p>
+            <p><span class="highlight">Número de cuotas:</span> <span class="value">{{ reverse_mortgage.quotas }}</span></p>
+            <p><span class="highlight">Tasa mensual:</span> <span class="value">{{ reverse_mortgage.monthly_rate | round(6) }}</span></p>
+            <p><span class="highlight">Cuota mensual:</span> <span class="value">${{ reverse_mortgage.calculate_monthly_fee() }}</span></p>
+        </div>
+        <a href="{{ url_for('index') }}"><button>Volver</button></a>
+    </div>
+    <footer>
+        <p><center>&copy;Hipoteca Inversa. </center></p>
+    </footer>
+</body>
+</html>
